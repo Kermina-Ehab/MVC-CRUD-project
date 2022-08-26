@@ -1,0 +1,33 @@
+﻿@model employee
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Update" method="post">
+    <input hidden asp-for="id" />
+    <div>
+        <label asp-for="name" class="form-label"></label>
+        <input asp-for="name" class="form-control" />
+        <span asp-validation-for="name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="age" class="form-label"></label>
+        <input asp-for="age" class="form-control" />
+        <span asp-validation-for="age" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="address" class="form-label"></label>
+        <input asp-for="address" class="form-control" />
+        <span asp-validation-for="address" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="deptid" class="form-label"></label>
+        <select asp-for="deptid" asp-items="ViewBag.depts as SelectList" class="form-select"></select>
+        <span asp-validation-for="deptid" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
